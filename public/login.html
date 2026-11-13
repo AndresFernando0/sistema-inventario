@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#091524">
+<title>Acceso | Sistema de Inventario</title>
+<link rel="stylesheet" href="./css/estilos.css">
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0"></script>
+<script defer src="./js/app.js"></script><script defer src="./js/login.js"></script>
+</head>
+<body>
+<header class="site-header"><a href="./index.html" class="brand">INVENTARIO<span class="accent">.</span></a><span class="muted">Proyecto academico  -  UPH</span></header>
+<main class="shell"><section class="card">
+<div class="eyebrow">Plataforma de gestion</div>
+<h1>Bienvenido de nuevo<span class="accent">.</span></h1>
+<p>Accede a los modulos de productos, personal y proveedores.</p>
+<form id="loginForm" novalidate>
+<label for="correo">Correo electronico</label>
+<input id="correo" type="email" autocomplete="username" placeholder="correo@ejemplo.com" required>
+<label for="contrasena">Contrasena</label>
+<div class="input-group"><input id="contrasena" type="password" autocomplete="current-password" required placeholder="Tu contrasena"><button id="verPassword" type="button" class="password-toggle" aria-label="Mostrar contrasena" aria-pressed="false">Mostrar</button></div>
+<div id="mensajeLogin" class="notice" role="alert" aria-live="polite" hidden></div>
+<button id="botonEntrar" type="submit" class="primary full">Iniciar sesion</button>
+</form>
+<p class="muted small">Si no tienes cuenta, solicita acceso al administrador.</p>
+</section></main>
+</body></html>

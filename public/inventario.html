@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#091524">
+<title>Panel principal | Sistema de Inventario</title>
+<link rel="stylesheet" href="./css/estilos.css">
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0"></script>
+<script defer src="./js/app.js"></script><script defer src="./js/guard.js"></script><script defer src="./js/inventario-base.js"></script>
+</head>
+<body>
+<p id="verificandoAcceso" class="loading" role="status">Verificando acceso...</p>
+<div id="contenidoProtegido" hidden>
+<header class="site-header"><a href="./inventario.html" class="brand">INVENTARIO<span class="accent">.</span></a><button id="cerrarSesion" type="button" class="secondary">Cerrar sesion</button></header>
+<main class="dashboard"><div class="eyebrow">Panel principal</div><h1>Gestion de inventario</h1>
+<p>Cuenta activa: <strong id="usuarioActual"></strong></p>
+<div class="grid">
+<article class="tile"><div class="eyebrow">01 / Modulo</div><h2>Productos</h2><p>Espacio para el CRUD que desarrollara el integrante 2.</p><p class="status" id="estadoConexion">Comprobando conexion con Supabase...</p></article>
+<article class="tile"><div class="eyebrow">02 / Modulo</div><h2>Personal</h2><p>Este modulo lo integrara el integrante 3.</p></article>
+<article class="tile"><div class="eyebrow">03 / Modulo</div><h2>Proveedores</h2><p>Este modulo lo integrara el integrante 3.</p></article>
+</div>
+<p id="mensajePanel" class="notice" role="status" hidden></p>
+</main></div>
+</body></html>
