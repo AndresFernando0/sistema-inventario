@@ -1,5 +1,11 @@
 (async () => {
   const login = new URL('../login.html', document.currentScript.src).href;
+  let redirigiendo = false;
+  function irAlLogin() {
+    if (redirigiendo) return;
+    redirigiendo = true;
+    window.location.replace(login);
+  }
   window.addEventListener('pageshow', event => {
     if (event.persisted) window.location.reload();
   });
@@ -13,13 +19,13 @@
   window.db.auth.onAuthStateChange(event => {
     if (event === 'SIGNED_OUT') {
       if (content) content.hidden = true;
-      window.location.replace(login);
+      irAlLogin();
     }
   });
   try {
     const { data: { user }, error } = await window.db.auth.getUser();
     if (error || !user) {
-      window.location.replace(login);
+      irAlLogin();
       return;
     }
     const email = document.getElementById('usuarioActual');
@@ -36,7 +42,7 @@
     logout.disabled = true;
     const { error } = await window.db.auth.signOut();
     if (!error) {
-      window.location.replace(login);
+      irAlLogin();
       return;
     }
     logout.disabled = false;
