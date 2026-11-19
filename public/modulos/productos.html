@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Inventario</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/inventario.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <h1>Gestión de Inventario</h1>
+        <p>Administración y control de productos</p>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- RESUMEN DEL INVENTARIO -->
+
+        <section class="resumen-inventario">
+
+            <div class="tarjeta-resumen">
+                <span>Total de productos</span>
+                <h2 id="totalProductos">0</h2>
+            </div>
+
+            <div class="tarjeta-resumen">
+                <span>Unidades disponibles</span>
+                <h2 id="totalUnidades">0</h2>
+            </div>
+
+            <div class="tarjeta-resumen">
+                <span>Productos con poco stock</span>
+                <h2 id="productosBajos">0</h2>
+            </div>
+
+        </section>
+
+        <!-- FORMULARIO DE PRODUCTOS -->
+
+        <section class="panel">
+
+            <h2 id="tituloFormulario">Registrar Producto</h2>
+
+            <form id="productoForm">
+
+                <input type="hidden" id="productoId">
+
+                <div class="grupo">
+                    <label for="codigo">Código del producto</label>
+                    <input
+                        type="text"
+                        id="codigo"
+                        name="codigo"
+                        placeholder="Ej. PROD-001"
+                        required>
+                </div>
+
+                <div class="grupo">
+                    <label for="nombre">Nombre del producto</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Ingrese el nombre"
+                        required>
+                </div>
+
+                <div class="grupo">
+                    <label for="descripcion">Descripción</label>
+                    <input
+                        type="text"
+                        id="descripcion"
+                        name="descripcion"
+                        placeholder="Descripción del producto">
+                </div>
+
+                <div class="grupo">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Seleccione una categoría</option>
+                        <option value="Herramientas">Herramientas</option>
+                        <option value="Ferretería">Ferretería</option>
+                        <option value="Plomería">Plomería</option>
+                        <option value="Electricidad">Electricidad</option>
+                        <option value="Construcción">Construcción</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="grupo">
+                    <label for="precio">Precio (L.)</label>
+                    <input
+                        type="number"
+                        id="precio"
+                        name="precio"
+                        placeholder="0.00"
+                        min="0"
+                        step="0.01"
+                        required>
+                </div>
+
+                <div class="grupo">
+                    <label for="stock">Cantidad disponible</label>
+                    <input
+                        type="number"
+                        id="stock"
+                        name="stock"
+                        placeholder="0"
+                        min="0"
+                        step="1"
+                        required>
+                </div>
+
+                <div class="acciones-formulario">
+
+                    <button type="submit" id="btnGuardar">
+                        Guardar Producto
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnCancelar"
+                        class="btn-cancelar"
+                        hidden>
+                        Cancelar Edición
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- LISTADO DE PRODUCTOS -->
+
+        <section class="panel">
+
+            <div class="encabezado-listado">
+
+                <div>
+                    <h2>Lista de Productos</h2>
+                    <p>Productos registrados en el inventario</p>
+                </div>
+
+                <input
+                    type="search"
+                    id="buscarProducto"
+                    class="buscador"
+                    placeholder="Buscar producto...">
+
+            </div>
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="inventarioTabla"></tbody>
+
+                </table>
+
+                <p id="mensajeVacio" class="mensaje-vacio">
+                    No hay productos registrados.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- VENTANA DE CONFIRMACION -->
+
+        <div id="modalEliminar" class="modal-fondo" hidden>
+
+            <div class="modal-contenido">
+
+                <h2>Eliminar producto</h2>
+
+                <p>¿Está seguro de que desea eliminar este producto?</p>
+
+                <div class="acciones-modal">
+
+                    <button type="button" id="btnConfirmarEliminar">
+                        Sí, eliminar
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnCancelarEliminar"
+                        class="btn-cancelar">
+                        Cancelar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- NOTIFICACIONES -->
+
+    <div
+        id="contenedorNotificaciones"
+        class="contenedor-notificaciones"
+        aria-live="polite">
+    </div>
+
+    <script type="module" src="js/inventario.js"></script>
+
+</body>
+</html>
