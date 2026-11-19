@@ -123,7 +123,7 @@ async function guardarProducto(evento) {
         mostrarNotificacion(id ? 'Producto actualizado.' : 'Producto registrado.', 'exito');
         await cargarInventario();
     } catch {
-        mostrarNotificacion('No se pudo guardar el producto. Revisa los datos y la conexión.', 'error');
+        mostrarNotificacion('No se pudo guardar el producto. Revisa los datos y la conexion.', 'error');
     } finally {
         campo('btnGuardar').disabled = false;
     }

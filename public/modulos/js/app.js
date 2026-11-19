@@ -95,7 +95,7 @@ async function guardarDatos(event, modulo) {
 
     if (error) {
         console.error('Error al guardar:', error.message);
-        alert('Error al guardar: ' + error.message);
+        alert('No se pudo guardar el registro. Revisa los datos e intenta de nuevo.');
         return;
     }
 
