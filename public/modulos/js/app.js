@@ -1,5 +1,5 @@
 
-import { supabase } from './supabase.js';
+
 
 // ==========================================
 // CONFIGURACIÓN DE LOS MÓDULOS
@@ -27,10 +27,10 @@ const configuracion = {
         columnas: [
             'codigo',
             'empresa',
-            'representante',
+            'encargado',
             'telefono',
             'direccion',
-            'correo'
+            'email'
         ]
     }
 };
@@ -47,7 +47,7 @@ async function listarDatos(modulo) {
 
     cuerpo.replaceChildren();
 
-    const { data, error } = await supabase
+    const { data, error } = await window.db
         .from(config.tabla)
         .select('*')
         .order(
@@ -99,7 +99,7 @@ async function guardarDatos(event, modulo) {
     boton.disabled = true;
     boton.textContent = 'Guardando...';
 
-    const { error } = await supabase
+    const { error } = await window.db
         .from(config.tabla)
         .insert([datos]);
 
@@ -126,20 +126,22 @@ async function guardarDatos(event, modulo) {
 // INICIALIZAR LOS FORMULARIOS
 // ==========================================
 
-Object.keys(configuracion).forEach(modulo => {
+document.addEventListener('sesion-validada', () => {
+    Object.keys(configuracion).forEach(modulo => {
 
-    const formulario = document.getElementById(
-        configuracion[modulo].formulario
-    );
+        const formulario = document.getElementById(
+            configuracion[modulo].formulario
+        );
 
-    if (formulario) {
+        if (formulario) {
 
-        formulario.addEventListener('submit', event => {
-            guardarDatos(event, modulo);
-        });
+            formulario.addEventListener('submit', event => {
+                guardarDatos(event, modulo);
+            });
 
-        // Cargar registros al abrir la página
-        listarDatos(modulo);
-    }
+            // Cargar registros al abrir la página
+            listarDatos(modulo);
+        }
 
-});
+    });
+}, { once: true });
