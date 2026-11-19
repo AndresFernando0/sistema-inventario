@@ -42,7 +42,7 @@
             </div>
 
             <div class="tarjeta-resumen">
-                <span>Productos con poco stock</span>
+                <span>Productos con poco stock (≤ 5)</span>
                 <h2 id="productosBajos">0</h2>
             </div>
 
@@ -59,13 +59,13 @@
                 <input type="hidden" id="productoId">
 
                 <div class="grupo">
-                    <label for="codigo">Código del producto</label>
+                    <label for="codigo">ID del producto</label>
                     <input
                         type="text"
                         id="codigo"
                         name="codigo"
-                        placeholder="Ej. PROD-001"
-                        required>
+                        placeholder="Asignado al guardar"
+                        readonly>
                 </div>
 
                 <div class="grupo">
@@ -170,7 +170,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Código</th>
+                            <th>Descripción</th>
                             <th>Producto</th>
                             <th>Categoría</th>
                             <th>Precio</th>
