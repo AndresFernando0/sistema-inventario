@@ -49,5 +49,5 @@ form.addEventListener('submit', async (event) => {
   try {
     const { data: { user }, error } = await window.db.auth.getUser();
     if (!error && user) window.location.replace('./inventario.html');
-  } catch { /* Mostrar formulario hasta comprobar conexion */ }
+  } catch {}
 })();

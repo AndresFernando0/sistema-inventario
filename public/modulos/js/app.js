@@ -1,10 +1,3 @@
-
-
-
-// ==========================================
-// CONFIGURACIÓN DE LOS MÓDULOS
-// ==========================================
-
 const configuracion = {
     personal: {
         tabla: 'personal',
@@ -34,10 +27,6 @@ const configuracion = {
         ]
     }
 };
-
-// ==========================================
-// FUNCIÓN PARA MOSTRAR LOS REGISTROS
-// ==========================================
 
 async function listarDatos(modulo) {
 
@@ -78,10 +67,6 @@ async function listarDatos(modulo) {
     });
 }
 
-// ==========================================
-// FUNCIÓN PARA GUARDAR INFORMACIÓN
-// ==========================================
-
 async function guardarDatos(event, modulo) {
 
     event.preventDefault();
@@ -118,13 +103,8 @@ async function guardarDatos(event, modulo) {
 
     formulario.reset();
 
-    // Actualizar la tabla automáticamente
     await listarDatos(modulo);
 }
-
-// ==========================================
-// INICIALIZAR LOS FORMULARIOS
-// ==========================================
 
 document.addEventListener('sesion-validada', () => {
     Object.keys(configuracion).forEach(modulo => {
@@ -139,7 +119,6 @@ document.addEventListener('sesion-validada', () => {
                 guardarDatos(event, modulo);
             });
 
-            // Cargar registros al abrir la página
             listarDatos(modulo);
         }
 
