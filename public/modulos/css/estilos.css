@@ -1,0 +1,157 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.encabezado {
+    background: #123b5d;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.encabezado h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.encabezado p {
+    color: #dbeafe;
+}
+
+.contenedor {
+    width: 92%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.panel {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.panel h2 {
+    color: #123b5d;
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.grupo input,
+.grupo select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+.grupo input:focus,
+.grupo select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px #dbeafe;
+}
+
+button {
+    grid-column: 1 / -1;
+    background: #1769aa;
+    color: white;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0e4f83;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    padding: 13px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background: #123b5d;
+    color: white;
+}
+
+tr:hover {
+    background: #f1f5f9;
+}
+
+.volver {
+    display: inline-block;
+    background: #334155;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+}
+
+.volver:hover {
+    background: #1e293b;
+}
+
+@media (max-width: 650px) {
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+
+    .encabezado h1 {
+        font-size: 23px;
+    }
+}
