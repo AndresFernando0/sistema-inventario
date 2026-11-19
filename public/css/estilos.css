@@ -19,3 +19,4 @@ button{cursor:pointer;font:inherit;font-weight:750}button:disabled{opacity:.6;cu
 .loading{max-width:1000px;margin:70px auto;padding:20px}.dashboard strong{color:white}
 [hidden]{display:none!important}
 @media(max-width:760px){.site-header{flex-wrap:wrap;padding:18px}.grid{grid-template-columns:1fr}.card{padding:26px}.input-group{gap:5px}.password-toggle{padding:9px}}
+.tile{display:block;color:inherit;text-decoration:none}.tile:hover,.tile:focus-visible{border-color:#79efdc}.tile:focus-visible{outline:2px solid #79efdc;outline-offset:3px}
