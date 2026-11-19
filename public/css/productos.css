@@ -24,8 +24,6 @@
     margin-top: 10px;
 }
 
-/* ACCIONES DEL FORMULARIO */
-
 .acciones-formulario {
     grid-column: 1 / -1;
     display: flex;
@@ -43,8 +41,6 @@
 .btn-cancelar:hover {
     background: #475569;
 }
-
-/* ENCABEZADO DEL LISTADO */
 
 .encabezado-listado {
     display: flex;
@@ -76,8 +72,6 @@
     border-color: #2563eb;
     box-shadow: 0 0 0 2px #dbeafe;
 }
-
-/* TABLA */
 
 .tabla-contenedor {
     overflow-x: auto;
@@ -132,8 +126,6 @@
     color: #64748b;
 }
 
-/* NOTIFICACIONES */
-
 .contenedor-notificaciones {
     position: fixed;
     top: 20px;
@@ -180,8 +172,6 @@
     }
 }
 
-/* MODAL DE ELIMINACION */
-
 .modal-fondo {
     position: fixed;
     inset: 0;
@@ -225,8 +215,6 @@
     flex: 1;
     grid-column: auto;
 }
-
-/* RESPONSIVIDAD */
 
 @media (max-width: 650px) {
 
