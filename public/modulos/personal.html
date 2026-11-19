@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Personal</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>Gestión de Personal</h1>
+        <p>Administración de empleados de la empresa</p>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="panel">
+            <h2>Registrar Personal</h2>
+
+            <form id="personalForm" data-module="personal">
+
+                <div class="grupo">
+                    <label>Identidad</label>
+                    <input type="text" name="identidad"
+                        placeholder="Número de identidad" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Nombres</label>
+                    <input type="text" name="nombres"
+                        placeholder="Ingrese los nombres" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Apellidos</label>
+                    <input type="text" name="apellidos"
+                        placeholder="Ingrese los apellidos" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Género</label>
+                    <select name="genero" required>
+                        <option value="">Seleccione</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="grupo">
+                    <label>Teléfono</label>
+                    <input type="tel" name="telefono"
+                        placeholder="Número de teléfono" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Dirección</label>
+                    <input type="text" name="direccion"
+                        placeholder="Dirección del empleado" required>
+                </div>
+
+                <button type="submit">Guardar Personal</button>
+
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Lista de Personal</h2>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Identidad</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Género</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="personalTabla">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <a href="index.html" class="volver">Volver al inicio</a>
+
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

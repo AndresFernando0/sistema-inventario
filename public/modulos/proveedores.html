@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proveedores</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>Gestión de Proveedores</h1>
+        <p>Administración de socios comerciales</p>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="panel">
+            <h2>Registrar Proveedor</h2>
+
+            <form id="proveedoresForm" data-module="proveedores">
+
+                <div class="grupo">
+                    <label>Empresa</label>
+                    <input type="text" name="empresa"
+                        placeholder="Nombre de la empresa" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Representante o Encargado</label>
+                    <input type="text" name="representante"
+                        placeholder="Nombre del representante" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Teléfono</label>
+                    <input type="tel" name="telefono"
+                        placeholder="Número telefónico" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Dirección</label>
+                    <input type="text" name="direccion"
+                        placeholder="Dirección de la empresa" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Correo Electrónico</label>
+                    <input type="email" name="correo"
+                        placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <button type="submit">Guardar Proveedor</button>
+
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Lista de Proveedores</h2>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Empresa</th>
+                            <th>Representante</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="proveedoresTabla">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <a href="index.html" class="volver">Volver al inicio</a>
+
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
