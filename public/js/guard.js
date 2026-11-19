@@ -1,4 +1,8 @@
 (async () => {
+  const login = new URL('../login.html', document.currentScript.src).href;
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) window.location.reload();
+  });
   const loading = document.getElementById('verificandoAcceso');
   const content = document.getElementById('contenidoProtegido');
   const logout = document.getElementById('cerrarSesion');
@@ -6,10 +10,16 @@
     if (loading) loading.textContent = 'No se pudo cargar Supabase.';
     return;
   }
+  window.db.auth.onAuthStateChange(event => {
+    if (event === 'SIGNED_OUT') {
+      if (content) content.hidden = true;
+      window.location.replace(login);
+    }
+  });
   try {
     const { data: { user }, error } = await window.db.auth.getUser();
     if (error || !user) {
-      window.location.replace('./login.html');
+      window.location.replace(login);
       return;
     }
     const email = document.getElementById('usuarioActual');
@@ -26,7 +36,7 @@
     logout.disabled = true;
     const { error } = await window.db.auth.signOut();
     if (!error) {
-      window.location.replace('./login.html');
+      window.location.replace(login);
       return;
     }
     logout.disabled = false;

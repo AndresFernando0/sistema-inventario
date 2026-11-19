@@ -8,11 +8,17 @@
 
     <title>Gestión de Inventario</title>
 
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/inventario.css">
+    <link rel="stylesheet" href="../css/personalproveedores.css">
+    <link rel="stylesheet" href="../css/inventario.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0"></script>
+    <script defer src="../js/app.js"></script>
+    <script defer src="js/inventario.js"></script>
+    <script defer src="../js/guard.js"></script>
 </head>
 
 <body>
+    <p id="verificandoAcceso" role="status">Verificando acceso...</p>
+    <div id="contenidoProtegido" hidden>
 
     <header class="encabezado">
         <h1>Gestión de Inventario</h1>
@@ -214,6 +220,7 @@
 
         </div>
 
+        <a href="../inventario.html" class="volver">Volver al panel</a>
     </main>
 
     <!-- NOTIFICACIONES -->
@@ -224,7 +231,8 @@
         aria-live="polite">
     </div>
 
-    <script type="module" src="js/inventario.js"></script>
 
+
+    </div>
 </body>
 </html>
