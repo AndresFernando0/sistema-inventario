@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Activar cuenta | Sistema de Inventario</title>
+<link rel="stylesheet" href="./css/estilos.css">
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0"></script>
+<script defer src="./js/app.js"></script><script defer src="./js/activar.js"></script>
+</head>
+<body>
+<main class="shell"><section class="card">
+<h1>Activar cuenta</h1>
+<p id="estado" role="status">Comprobando invitacion...</p>
+<form id="activar" hidden>
+<label for="nueva">Nueva contrasena</label>
+<input id="nueva" type="password" autocomplete="new-password" minlength="16" required>
+<button class="primary full" type="submit">Guardar contrasena</button>
+</form>
+<a class="accent" href="./login.html">Ir al login</a>
+</section></main>
+</body></html>
