@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion de Proveedores</title>
     <link rel="stylesheet" href="../css/personalproveedores.css">
+    <link rel="stylesheet" href="../css/productos.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0"></script>
     <script defer src="../js/app.js"></script>
     <script defer src="js/app.js"></script>
@@ -23,7 +24,7 @@
     <main class="contenedor">
 
         <section class="panel">
-            <h2>Registrar Proveedor</h2>
+            <h2 id="tituloFormulario">Registrar Proveedor</h2>
 
             <form id="proveedoresForm" data-module="proveedores">
 
@@ -59,6 +60,7 @@
 
                 <button type="submit">Guardar Proveedor</button>
 
+                <button id="cancelarEdicion" type="button" class="btn-cancelar" hidden>Cancelar edicion</button>
             </form>
         </section>
 
@@ -75,6 +77,7 @@
                             <th>Telefono</th>
                             <th>Direccion</th>
                             <th>Correo</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
 
@@ -87,6 +90,7 @@
         <a href="../inventario.html" class="volver">Volver al panel</a>
 
     </main>
+    <div class="contenedor-notificaciones" id="notificaciones" aria-live="polite"></div>
 
 
     </div>
